@@ -1,0 +1,12 @@
+---
+   - name: sample_playbook
+     hosts: all or localhost
+     become: yes          # run as different user
+     become_user: root
+
+     tasks:
+     - name: Install Apache httpd
+       yum: 
+       name: httpd
+       state: present
+        

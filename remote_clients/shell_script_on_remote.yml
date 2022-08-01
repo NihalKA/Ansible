@@ -1,0 +1,8 @@
+---
+- name: run shell script on remote client
+  hosts: all
+  become: yes
+  
+  tasks:
+  - name: run shell script
+    shell: "/home/ec2-user/cfile.sh"    

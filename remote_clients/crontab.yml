@@ -1,0 +1,18 @@
+---
+- name: run a cron job
+  hosts: all
+  become: yes
+ 
+  tasks:
+  - name: schedule cron
+    cron:
+      name: this job scheduled by ansible
+      minute: "0"
+      hour: "10"
+      day: "*"
+      month: "*"
+      weekday: "4"
+      user: root
+      job: "/home/ec2-user/cfile.sh"
+
+

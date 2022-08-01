@@ -1,0 +1,10 @@
+---
+- name: Multi task playbook
+  hosts: localhost
+  
+  tasks:
+  - name: Test connectivity
+    ping:
+
+  - name: Print helloworld
+    debug: msg="Hello world"

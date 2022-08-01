@@ -1,0 +1,24 @@
+---
+- name: apache with firewalld setup
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: Install apache packages
+    yum:
+      name: httpd
+      state: present
+  - name: start apache
+    service:
+      name: httpd
+      state: started
+  - name: open port 80 for http
+    firewalld:
+      service: http
+      permanent: true
+      state: enabled
+  - name: Restart firewalld
+    service:
+      name: firewalld
+      state: reloaded
+

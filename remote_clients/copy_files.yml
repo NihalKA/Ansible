@@ -1,0 +1,14 @@
+---
+- name: copy files to remote client
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: copy files to remote
+    copy:
+      src: /home/ubuntu/sample.cfg
+      dest: /home/ec2-user/sample.cfg
+      owner: ec2-user
+      group: ec2-user
+      mode : 0777    
+

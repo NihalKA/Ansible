@@ -1,0 +1,8 @@
+---
+- name: "check remote client connectivity"
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: Test connectivity
+    ping:
