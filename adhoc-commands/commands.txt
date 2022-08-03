@@ -1,0 +1,40 @@
+ansible [target] -m [module] -a "[module options]"
+
+example:
+#ping local host
+ansible localhost -m ping
+
+#Creating a file on all remote clients
+ansible all -m file -a "path=/home/nihal/adhoc1 state=touch mode=700"
+
+#Delete files on all remote clients
+ansible all -m file -a "path=/home/nihal/adhoc1 state=absent"
+
+
+#Copying a file to remote clients
+ansible all -m copy -a "src=/tmp/adhoc2 dest=/home/nihal/adhoc2"
+
+#installing package(telnet and httpd-manual)
+ansible all -m yum -a "name=telnet state=present"
+ansible all -m yum -a "name=httpd-manual state=present"
+
+
+#starting a httpd package service with enabled at boot time
+ansible all -m service -a "name=httpd state=started enabld=yes"
+
+#checking httpd service status on remote client
+ansible all -m shell -a "systemctl status httpd"
+
+#creating a user on remote clients
+ansible all -m user -a "name=nihal home=/home/nihal shell=/bin/bash state=present"
+
+
+#To add a user to different group
+ansible all -m user -a "name=nihal group=devops"
+
+#getting system information from remote clients
+ansible all -m setup
+
+
+#you can run commands on the remote host without a shell module .eg: reboot client1
+ansible client1 -a "/sbin/reboot"
