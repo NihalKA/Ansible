@@ -1,0 +1,3 @@
+start a playbook at a specific task
+
+# ansible-playbook yamlfile.yml --start-at-task 'Task name'
