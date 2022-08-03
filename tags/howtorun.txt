@@ -1,0 +1,3 @@
+ansible-playbook httpbytags.yml --list-tags            ---> this will list tags of tasks
+ansible-playbook httpbytags.yml --skip-tags i-httpd    ---> this will run all tasks except the task with this tag
+ansible-playbook httpbytags.yml -t i-httpd             ---> this will run the task with specified tag
