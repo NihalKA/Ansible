@@ -1,0 +1,13 @@
+#to create a new encrypted yaml file
+
+ansible-vault create file.yml
+
+#similiar commands
+ansible-vault view file.yml
+ansible-vault edit file.yml
+ansible-vault create file.yml
+ansible-vault encrypt file.yml     --> encrypt existing file
+
+#encrypt string
+ansible-vault encrypt_string word
+
