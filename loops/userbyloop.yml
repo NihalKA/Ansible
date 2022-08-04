@@ -1,0 +1,13 @@
+---
+- name: create users by using loop in ansible
+  hosts: localhost
+  become: yes
+ 
+  tasks:
+  - name: create user
+    user: 
+      name: "{{ item }}"
+    loop:
+      - Nila
+      - Anvitha
+      - thanvi

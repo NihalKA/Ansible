@@ -1,0 +1,10 @@
+---
+- name: create users by using loop in ansible
+  hosts: all
+  become: yes
+  vars:
+   packages: [ftp,telnet,htop] 
+  tasks:
+  - name: Install packages
+    yum: 
+      name: "{{ packages }}"
